@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Globetrotter</title>
+        <link
+            href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css"
+            rel="stylesheet"
+        />
+        <script src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"></script>
+
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <div id="app">
+            <div id="map"></div>
+            <div id="hud" class="">
+                <div id="hud-controls">
+                    <button id="btn-play-pause" class="paused disabled loading">
+                        <span id="itext">▶</span>
+                    </button>
+                    <button id="btn-refresh" class="">
+                        <span id="itext">⟳</span>
+                    </button>
+                </div>
+                <div id="hud-route" class="closed">
+                    <div id="hud-route-from"></div>
+                    <div id="hud-route-center"></div>
+                    <div id="hud-route-to"></div>
+                </div>
+                <div id="right-corner"></div>
+            </div>
+            <div id="menu" class="">
+                <div id="menu-contents">
+                    <input
+                        placeholder="Enter a title"
+                        id="trip-title-box"
+                        type="text"
+                    />
+                    <div id="search-box-container">
+                        <svg
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g
+                                id="SVGRepo_tracerCarrier"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M3.37892 10.2236L8 16L12.6211 10.2236C13.5137 9.10788 14 7.72154 14 6.29266V6C14 2.68629 11.3137 0 8 0C4.68629 0 2 2.68629 2 6V6.29266C2 7.72154 2.4863 9.10788 3.37892 10.2236ZM8 8C9.10457 8 10 7.10457 10 6C10 4.89543 9.10457 4 8 4C6.89543 4 6 4.89543 6 6C6 7.10457 6.89543 8 8 8Z"
+                                    fill="#000000"
+                                ></path>
+                            </g>
+                        </svg>
+                        <input
+                            id="search-box"
+                            type="text"
+                            placeholder="Add a place"
+                            autocomplete="off"
+                        />
+                    </div>
+                    <ul id="places-list"></ul>
+                    <div id="search-results"></div>
+                </div>
+                <div id="menu-handle">
+                    <svg
+                        width="20px"
+                        height="20px"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                            fill="lightgrey"
+                        />
+                    </svg>
+                    <h1 id="handle-title"></h1>
+                </div>
+            </div>
+            <div id="offline-bug" class="closed">your internet is offline!</div>
+        </div>
+
+        <script type="module" src="./app.js"></script>
+    </body>
+</html>
