@@ -1,0 +1,2 @@
+# globetrotter
+Visualize your trip!
