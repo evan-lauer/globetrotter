@@ -10,9 +10,10 @@ import {
     wideWorldView,
 } from "./camera.js";
 
-const MAPBOX_TOKEN = "I'll add this soon";
-mapboxgl.accessToken = MAPBOX_TOKEN;
+let isMapLoaded = false;
+const MAPBOX_TOKEN = process?.env?.Mapbox_pub_key;
 
+mapboxgl.accessToken = MAPBOX_TOKEN;
 const map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mapbox/satellite-v9",
@@ -29,8 +30,6 @@ map.addControl(
 );
 
 const store = initUI();
-
-let isMapLoaded = false;
 
 function legFeature(id, mode, coordinates) {
     return {
