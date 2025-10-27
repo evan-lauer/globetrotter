@@ -11,7 +11,7 @@ import {
 } from "./camera.js";
 
 let isMapLoaded = false;
-const MAPBOX_TOKEN = process?.env?.Mapbox_pub_key;
+const MAPBOX_TOKEN = process?.env?.NEXT_PUBLIC_MAPBOX_KEY;
 
 mapboxgl.accessToken = MAPBOX_TOKEN;
 const map = new mapboxgl.Map({
