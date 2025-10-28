@@ -7,7 +7,7 @@ export default function getAPIKey() {
     ) {
         try {
             const xhr = new XMLHttpRequest();
-            xhr.open("GET", "key_content.txt", false);
+            xhr.open("GET", "prod_key_content.txt", false);
             xhr.send(null);
             if (xhr.status === 200) {
                 return xhr.responseText.trim();
