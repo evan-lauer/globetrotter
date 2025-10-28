@@ -9,9 +9,10 @@ import {
     easings,
     wideWorldView,
 } from "./camera.js";
+import getAPIKey from "./key.js";
 
 let isMapLoaded = false;
-const MAPBOX_TOKEN = process?.env?.NEXT_PUBLIC_MAPBOX_KEY;
+const MAPBOX_TOKEN = getAPIKey();
 
 mapboxgl.accessToken = MAPBOX_TOKEN;
 const map = new mapboxgl.Map({
